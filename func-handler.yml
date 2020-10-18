@@ -1,0 +1,11 @@
+apiVersion: ignite.weave.works/v1alpha2
+kind: VM
+metadata:
+  name: function-handler-vm
+spec:
+  image:
+    oci: weaveworks/ignite-ubuntu
+  cpus: 1
+  diskSize: 2GB
+  memory: 800MB
+  ssh: true
