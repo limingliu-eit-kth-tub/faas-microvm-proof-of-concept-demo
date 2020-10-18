@@ -25,9 +25,9 @@ To run this demo you need to install docker and Weaveworks Ignite on the host ma
 Docker:  [Docker Installation guide](https://docs.docker.com/get-docker/)
 Weaveworks Ignite:  [Install guide Weaveworks Ignite](https://github.com/weaveworks/ignite/blob/master/docs/installation.md)
 After you finish you should be able to run docker and Weaveworks Ignite. You can check your Docker and Ignite version, here are the result on my host machine:
-**Docker version**
+
 ![Docker version](https://i.ibb.co/j64DVKN/Docker-version.png)
-**Ignite version**
+
 ![Ignite Version](https://i.ibb.co/5r96c0t/Ignite-version.png)
 
 ## 3. Deployment
