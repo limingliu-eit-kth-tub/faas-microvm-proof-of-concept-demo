@@ -1,9 +1,12 @@
 # Overview
 This is a demo project intended to explore a solution for MicroVM-based FaaS platform. 
 
+Contact: Liming Liu liming.liu@campus.tu-berlin.de
+
 ## 1. Architecture Design
 Since the goal of this demo is to explore a potential solution for MicroVM-based FaaS platform, a simplified architecture is being used. Compare with a full-fledged platform, the demo mainly focuses on the function handler part of FaaS service and temporarily not implementing client gateway and automated management moduless. An overview of the simplified architecture is shown below:
 ![Architecture overview](https://i.ibb.co/kKz02Wm/architecture.png)
+
 The workflow of the simplified platform works as:
 
 1: The platform deploys Docker environment, then run Weaveworks Ignite in a docker container
@@ -25,7 +28,7 @@ After you finish you should be able to run docker and Weaveworks Ignite. You can
 **Docker version**
 ![Docker version](https://i.ibb.co/j64DVKN/Docker-version.png)
 **Ignite version**
-![Ignite Version](https://i.ibb.co/p1726vg/Ignite-version.png)
+![Ignite Version](https://i.ibb.co/5r96c0t/Ignite-version.png)
 
 ## 3. Deployment
 
