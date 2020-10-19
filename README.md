@@ -46,7 +46,7 @@ To deploy the demo project firstly clone the repo to your local
 
  - The **hello-world<span>.py** is the example function code in this demo, it prints out a simpel HTML page, if you like you can replace with any function you want to play with.
  - The **localfunction<span>.sh** is the command to execute the function code, in our case it executes hello-world<span>.py
- - The **server<span>.py** was intended to serve like the http server in **tinyFaaS** architecture or the **watch dog** in **OpenFaaS** architecture, it receives the HTTP trigger from gateway and execute the function. However since this is a simple demo, I did not build a client gateway, so this extra layer of proxy is now transparent. The client( browser) need to send request directly to this server to access the function.
+ - The **server<span>.py** was intended to serve like the **watch dog** in **[OpenFaaS's](https://github.com/openfaas/faas)** architecture, it receives the HTTP trigger from gateway and execute the function. However since this is a simple demo, I did not build a client gateway, so this extra layer of proxy is now transparent. The client( browser) need to send request directly to this server to access the function.
  - Finally the  **func-handler<span>.yml**  is the configuration file of the MicroVM machine when being created by Ignite. Here I use a template file from Ignite website. It declares the new VM to be assigned 1 CPU, 2GB disk and 800MB memory. Addition to that the "ssh" specification is added to securely transfer file from host machine to the Firecracker MicroVM.
  
  Since the focus in this demo is to show how the function handler works, we temporarily will ignore the automation process and do things manually. 
