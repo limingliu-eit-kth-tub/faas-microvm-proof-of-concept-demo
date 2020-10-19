@@ -4,20 +4,20 @@ This is a demo project intended to explore a solution for MicroVM-based FaaS pla
 Contact: Liming Liu liming.liu@campus.tu-berlin.de
 
 ## 1. Architecture Design
-Since the goal of this demo is to explore a potential solution for MicroVM-based FaaS platform, a simplified architecture is being used. Compare with a full-fledged platform, the demo mainly focuses on the function handler part of FaaS service and temporarily not implementing client gateway and automated management moduless. An overview of the simplified architecture is shown below:
+Since the goal of this demo is to explore a potential solution for MicroVM-based FaaS platform, a simplified architecture is being used. Compare with a full-fledged platform, the demo mainly focuses on the function handler part of FaaS service and temporarily not implementing client gateway and automated management modules. An overview of the simplified architecture is shown below:
 ![Architecture overview](https://i.ibb.co/kKz02Wm/architecture.png)
 
-The workflow of the simplified platform works as:
+The workflow of the simplified architecture is:
 
-1: The platform deploys Docker environment, then run Weaveworks Ignite in a docker container
-2: The developer uploads function code
-3: Deploy new function ( this step is now by manual, with further development it should be automatically managed). 
+1: The platform deploys Docker environment, then run Weaveworks Ignite in a docker container  
+2: The developer uploads function code  
+3: Deploy new function ( this step is now by manual, with further development it should be automatically managed).   
 
  - Ignite creates a new Firecracker microVM instance for the new function
  - The platform copys the Http server and function code into the new VM
  - The platform runs the Http server in the new VM
 
-4: The client invokes the function through HTTP request to the Http server, the server will then invoke the function and pass the output back to client
+4: The client invokes the function by sending HTTP request to the Http server, the server will then call the function and pass the output back to client
 
 ## 2. Prerequisites
 
