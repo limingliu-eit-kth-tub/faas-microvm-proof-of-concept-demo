@@ -46,10 +46,10 @@ To deploy the demo project firstly clone the repo to your local
 
  - The **hello-world<span>.py** is the example function code in this demo, it prints out a simpel HTML page, if you like you can replace with any function you want to play with.
  - The **localfunction<span>.sh** is the command to execute the function code, in our case it executes hello-world<span>.py
- - The **server<span>.py** was intended to serve as the http server like in tinyFaaS architecture or the watch dog in OpenFaaS architecture, it receives the HTTP trigger from gateway and execute the function. However since this is a simple demo, I did not build a client gateway, so this extra layer of proxy is now transparent. The client( browser) need to send request directly to this server to access the function.
+ - The **server<span>.py** was intended to serve like the http server in **tinyFaaS** architecture or the **watch dog** in **OpenFaaS** architecture, it receives the HTTP trigger from gateway and execute the function. However since this is a simple demo, I did not build a client gateway, so this extra layer of proxy is now transparent. The client( browser) need to send request directly to this server to access the function.
  - Finally the  **func-handler<span>.yml**  is the configuration file of the MicroVM machine when being created by Ignite. Here I use a template file from Ignite website. It declares the new VM to be assigned 1 CPU, 2GB disk and 800MB memory. Addition to that the "ssh" specification is added to securely transfer file from host machine to the Firecracker MicroVM.
  
- Since the focus in this demo is to show how the function handler works, we temporarily will ignore the automation process and do things manually( just for now). 
+ Since the focus in this demo is to show how the function handler works, we temporarily will ignore the automation process and do things manually. 
  Let's suppose hello-world<span>.py is the function code that developers just uploaded. Then the first thing the platform should do is to create a new microVM instance for it. So we run this:
  
 
@@ -62,7 +62,7 @@ Now the new microVM instance is created, we will deploy our function on it. To d
 
     sudo ignite cp ./ function-handler-vm:./
     sudo ignite exec function-handler-vm python3 server.py
-   Now you will see some info saying the httpd is started. This shows that the server on the microVM is up. However we have one more step to access the fuction. Since we do not have a proxy or gateway yet, we need to know the VM's IP in order to send request to our newly extablished server. We can do this:
+   Now you will see some info saying the httpd is started. This shows that the server on the microVM is up. However we have one more step to access the fuction. Since we do not have a proxy or gateway yet, we need to know the VM's IP address in order to send request to our newly extablished server. We can do this:
    
 
     sudo ignite vm ls
@@ -70,7 +70,7 @@ Now the new microVM instance is created, we will deploy our function on it. To d
    
 ![The Hello Function Page](https://i.ibb.co/BLKX3tG/Final.png)
 ## 4. Future work
-Up to now our FaaS platform feels very unhandy to use. Yes indeed it is. But with further development we can automate the management as well as adding a client proxy( or a gateway as you might like to call it). Ideally, the developer will simply need to select a programming language, upload their code and then the web deployment will be handled automatically. 
+Up to now this demo FaaS platform feels very unhandy to use. Yes indeed it is. But with further development we can automate the management as well as adding a client proxy( or a gateway as you might like to call it). Ideally, the developer will simply need to select a programming language, upload their code and then the web deployment will be handled automatically. 
 
 There are lots of add-ons the mainstream FaaS platforms provide, kind of making them must-haves. For example auto-scaling, load-balancing and performance monitoring, etc. Some of them we also will look into in future.
 
