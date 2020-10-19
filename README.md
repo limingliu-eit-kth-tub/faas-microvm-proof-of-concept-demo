@@ -22,8 +22,9 @@ The workflow of the simplified architecture is:
 ## 2. Prerequisites
 
 To run this demo you need to install docker and Weaveworks Ignite on the host machine. You can install the prerequisites by following their official docs:  
-Docker:  [Docker Installation guide](https://docs.docker.com/get-docker/)  
-Weaveworks Ignite:  [Install guide Weaveworks Ignite](https://github.com/weaveworks/ignite/blob/master/docs/installation.md)  
+ - Docker:  [Docker Installation guide](https://docs.docker.com/get-docker/)  
+ - Weaveworks Ignite:  [Install guide Weaveworks Ignite](https://github.com/weaveworks/ignite/blob/master/docs/installation.md)  
+ 
 After you finish you should be able to run docker and Weaveworks Ignite. You can check your Docker and Ignite version, here are the result on my host machine:  
 
 ![Docker version](https://i.ibb.co/j64DVKN/Docker-version.png)
